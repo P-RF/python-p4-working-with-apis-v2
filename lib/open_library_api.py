@@ -28,7 +28,7 @@ class Search:
         limit = 1
 
         URL = f"https://openlibrary.org/search.json?title={search_term_formatted}&fields={fields_formatted}&limit={limit}"
-        print(URL)
+        # print(URL)
         response = requests.get(URL)
         return response.json()
 
@@ -45,10 +45,11 @@ class Search:
         return response_formatted
 
 
-# results = Search().get_search_results()
+results = Search().get_search_results()
 # print(results)
 
-# results_json = Search().get_search_results_json()
+results_json = Search().get_search_results_json()
+# json.dumps formats the JSON object in a human readable format
 # print(json.dumps(results_json, indent=1))
 
 search_term = input("Enter a book title: ")
